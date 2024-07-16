@@ -2,13 +2,7 @@
 import inquirer from "inquirer";
 // greeting the user 
 console.log("Welcome ! To The Currency Converter Machine.With M.Hamza zai.");
-// interface CurrencyType {
-//     USD:number;
-//     PKR:number;
-//     IND:number;
-//     Riyal:number;
-//     Euro:number;
-// };
+;
 const currency = {
     USD: 1,
     PKR: 277,
@@ -17,7 +11,6 @@ const currency = {
     Euro: 0.92,
     Dirham: 3.67,
 };
-currency["GBP"] = 44;
 let userAns = await inquirer.prompt([
     {
         name: "from",
@@ -48,5 +41,4 @@ let baseAmount = amount / fromAmount;
 // extracting the amount in the curency user want
 let convertedAmount = baseAmount * toAmount;
 // printing the reult
-// console.log(`Your ${amount} ${userAns.from} = ${convertedAmount.toFixed(0)} ${userAns.to}.`);
-console.log(currency);
+console.log(`Your ${amount} ${userAns.from} = ${convertedAmount.toFixed(0)} ${userAns.to}.`);
