@@ -2,30 +2,38 @@
 import inquirer from "inquirer";
 // greeting the user 
 console.log("Welcome ! To The Currency Converter Machine.With M.Hamza zai.");
+// interface CurrencyType {
+//     USD:number;
+//     PKR:number;
+//     IND:number;
+//     Riyal:number;
+//     Euro:number;
+// };
 const currency = {
     USD: 1,
     PKR: 277,
     IND: 83,
     Riyal: 3,
     Euro: 0.92,
+    Dirham: 3.67,
 };
 let userAns = await inquirer.prompt([
     {
         name: "from",
         type: "list",
-        message: "Select Your Currency To Change Your Money From !.",
-        choices: ["USD", "PKR", "IND", "Riyal", "Euro"],
+        message: "Select The Currency That You Have !.",
+        choices: ["USD", "PKR", "IND", "Riyal", "Euro", "Dirham"],
     },
     {
         name: "to",
         type: "list",
-        message: "Select Your Currency To Change Your Money Into !.",
-        choices: ["USD", "PKR", "IND", "Riyal", "Euro"],
+        message: "Select The Currency To Change Your Money Into !.",
+        choices: ["USD", "PKR", "IND", "Riyal", "Euro", "Dirham"],
     },
     {
         name: "amount",
         type: "number",
-        message: "Enter Your Amount You Want To Change !.",
+        message: "Enter Your Amount That You Want To Change !.",
     }
 ]);
 // the currency user select to change their money
@@ -39,4 +47,4 @@ let baseAmount = amount / fromAmount;
 // extracting the amount in the curency user want
 let convertedAmount = baseAmount * toAmount;
 // printing the reult
-console.log(`Ans = ${convertedAmount}.`, userAns.to);
+console.log(`Your ${amount} ${userAns.from} = ${convertedAmount.toFixed(0)} ${userAns.to}.`);
