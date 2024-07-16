@@ -17,6 +17,7 @@ const currency = {
     Euro: 0.92,
     Dirham: 3.67,
 };
+currency["GBP"] = 44;
 let userAns = await inquirer.prompt([
     {
         name: "from",
@@ -47,4 +48,5 @@ let baseAmount = amount / fromAmount;
 // extracting the amount in the curency user want
 let convertedAmount = baseAmount * toAmount;
 // printing the reult
-console.log(`Your ${amount} ${userAns.from} = ${convertedAmount.toFixed(0)} ${userAns.to}.`);
+// console.log(`Your ${amount} ${userAns.from} = ${convertedAmount.toFixed(0)} ${userAns.to}.`);
+console.log(currency);

@@ -5,15 +5,11 @@ import inquirer from "inquirer";
 // greeting the user 
 console.log("Welcome ! To The Currency Converter Machine.With M.Hamza zai.");
 
-// interface CurrencyType {
-//     USD:number;
-//     PKR:number;
-//     IND:number;
-//     Riyal:number;
-//     Euro:number;
-// };
+ interface CurrencyType {
+     [key:string]:number;
+ };
 
-const currency:{[key:string]:number} = {
+const currency:CurrencyType = {
     USD: 1, // base currency
     PKR: 277,
     IND: 83,
@@ -21,6 +17,7 @@ const currency:{[key:string]:number} = {
     Euro: 0.92,
     Dirham:3.67,
 };
+
 
 let userAns = await inquirer.prompt([
     {
