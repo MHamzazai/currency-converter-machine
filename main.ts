@@ -13,7 +13,7 @@ console.log("Welcome ! To The Currency Converter Machine.With M.Hamza zai.");
 //     Euro:number;
 // };
 
-const currency:any = {
+const currency:{[key:string]:number} = {
     USD: 1, // base currency
     PKR: 277,
     IND: 83,
